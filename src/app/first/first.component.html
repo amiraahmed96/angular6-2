@@ -1,0 +1,14 @@
+<div class="container">
+    <p *ngIf="x; else elsepart;">this is if paert</p>
+    <ng-template #elsepart>
+      <p>this is else part</p>
+    </ng-template>
+
+    <input class="form-control" [(ngModel)]="servername">
+    <button class="btn btn-success" (click)="oncreateServer()">Add server</button>
+    <p *ngIf="serverStatus">server {{ servername }} is created</p>
+
+    <ul>
+      <li *ngFor="let server of servers">{{ server }}</li>
+    </ul>
+</div>
